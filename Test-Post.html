@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title> Icon </title>
+        <script type="text/javascript" src="../lib/d3/d3.v3.js"></script>
+    </head>
+
+
+    <body>
+
+    <p id="drawing">
+
+        <script>
+
+            // data is not same as here, just to explain the requirement created it.
+            var lineData = [{"x": 55, "y": 65},
+                {"x": 63, "y": 57},
+                {"x": 157, "y": 57},
+                {"x": 165, "y": 65}];
+
+            var svg = d3.select("#drawing")
+                    .append("svg")
+                    .attr("height", 200)
+                    .attr("width", 200)
+                    .attr("transform", "translate(20, 20)");
+
+            var lineFunction = d3.svg.line()
+                    .x(function (d) {
+                        return d.x;
+                    })
+                    .y(function (d) {
+                        return d.y;
+                    })
+                    .interpolate("linear");
+
+            svg.append("path")
+                    .attr("d", lineFunction(lineData))
+                    .style("stroke-width", 0.5)
+                    .style("stroke", "rgb(6,120,155)")
+                    .on("mouseover", function () {
+                        d3.select(this)
+                                .style("stroke", "orange");
+                    })
+                    .on("mouseout", function () {
+                        d3.select(this)
+                                .style("stroke", "rgb(6,120,155)");
+                    });
+
+        </script>
+
+    </body>
+    </html>
