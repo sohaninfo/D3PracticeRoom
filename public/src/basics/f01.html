@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Basics</title>
+
+    <script type="text/javascript" src="../../d3/d3.v3.js"></script>
+    <script type="text/javascript" src="b01.js"></script>
+</head>
+<body>
+<h5>OTN</h5>
+<hr>
+<h5>Basic shapes</h5>
+<div id="id1"></div>
+<div id="id2"></div>
+<div id="id3"></div>
+<div id="id4"></div>
+<div id="id5"></div>
+<div id="id6"></div>
+
+<script type="text/javascript">
+	instance('TPE')
+	var d = [
+		{"cx": 100, "cy": 100, "r": 10},
+		{"cx": 140, "cy": 100, "r": 20},
+		{"cx": 200, "cy": 100, "r": 30},
+		{"cx": 280, "cy": 100, "r": 40},
+		{"cx": 380, "cy": 100, "r": 50},
+		{"cx": 495, "cy": 100, "r": 60},
+		{"cx": 630, "cy": 100, "r": 70}
+	]
+//	drawCircles(d)
+
+        var d2 = {"nodes":[
+  {"x":80, "r":40, "label":"Node 1"}, 
+  {"x":200, "r":60, "label":"Node 2"}, 
+  {"x":380, "r":80, "label":"Node 3"}
+]} 
+	//drawCirclesWithLabels(d2)
+	circle2(d2)
+	drawRect('#id5')
+</script>
+
+
+</body>
+</html>
